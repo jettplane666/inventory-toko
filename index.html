@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TokoKu — Sales & Inventory</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<section id="login" hidden><form class="lbox" onsubmit="return login(event)">
+<svg class="lg" viewBox="0 0 32 32" aria-label="TokoKu"><rect width="32" height="32" rx="9" fill="#2563eb"/><path d="M9 12h14l-1.2 11H10.2z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M12.5 12a3.5 3.5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="18" r="1.7" fill="#7dd3fc"/></svg><h1>TokoKu</h1><p class="mut">Sales & Inventory Management System</p>
+<label>Email<input id="em" value="owner@tokoku.demo"></label>
+<label>Password<span class="pw"><input id="pw" type="password" value="Owner123!"><button type="button" onclick="pw.type=pw.type=='password'?'text':'password'">👁</button></span></label>
+<label class="chk"><input type="checkbox" id="rm" checked> Ingat saya</label>
+<button class="btn">Masuk</button><div id="lerr" class="err"></div>
+<small class="mut">Demo: owner@tokoku.demo / Owner123! · kasir@tokoku.demo / Kasir123!<br>⚠ Login ini hanya simulasi frontend, tidak aman untuk produksi.</small></form></section>
+<div id="app" hidden><aside id="side"><div class="brand"><svg class="lg s" viewBox="0 0 32 32" aria-label="TokoKu"><rect width="32" height="32" rx="9" fill="#2563eb"/><path d="M9 12h14l-1.2 11H10.2z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M12.5 12a3.5 3.5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="2"/><circle cx="16" cy="18" r="1.7" fill="#7dd3fc"/></svg><b id="brand"></b></div><nav id="nav"></nav>
+<button class="btn ghost" onclick="logout()">Keluar</button></aside>
+<div class="wrap"><header><button class="burger" onclick="document.body.classList.toggle('nv')">☰</button><div class="hd"><small id="crumb" class="mut"></small><h2 id="ttl"></h2></div><button class="bell" title="Stok menipis" aria-label="Notifikasi stok" onclick="go('stock')"><i data-lucide="bell"></i><span id="bcnt"></span></button><span id="av" class="av"></span><span class="pf"><b id="who"></b><small id="role"></small></span></header>
+<main id="main"></main></div></div>
+<div id="modal" hidden onclick="if(event.target==this)cm()"><div class="mbox" id="mbox"></div></div><div id="toast"></div>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script><script src="app.js"></script></body></html>
